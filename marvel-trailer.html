@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel Movie Trailers</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="bg-gray-900 text-white">
+    <header class="text-center py-6 bg-red-700 text-2xl font-bold">
+        Marvel Movie Trailers
+    </header>
+    <main class="container mx-auto py-10 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-6">
+        <script>
+            const trailers = [
+                { title: "Avengers: Endgame", video: "https://www.youtube.com/embed/TcMBFSGVi1c" },
+                { title: "Spider-Man: No Way Home", video: "https://www.youtube.com/embed/JfVOs4VSpmA" },
+                { title: "Black Panther", video: "https://www.youtube.com/embed/xjDjIWPwcPU" },
+                { title: "Doctor Strange", video: "https://www.youtube.com/embed/HSzx-zryEgM" },
+                { title: "Guardians of the Galaxy Vol. 3", video: "https://www.youtube.com/embed/u3V5KDHRQvk" },
+                { title: "Thor: Ragnarok", video: "https://www.youtube.com/embed/ue80QwXMRHg" },
+                { title: "Captain Marvel", video: "https://www.youtube.com/embed/Z1BCujX3pw8" },
+                { title: "Shang-Chi", video: "https://www.youtube.com/embed/8YjFbMbfXaQ" },
+                { title: "Eternals", video: "https://www.youtube.com/embed/0WVDKZJkGlY" },
+                { title: "Ant-Man and the Wasp: Quantumania", video: "https://www.youtube.com/embed/ZlNFpri-Y40" }
+            ];
+
+            document.write(trailers.map(trailer => `
+                <div class="group relative border-2 border-gray-700 rounded-lg overflow-hidden hover:shadow-lg transition duration-300">
+                    <iframe class="w-full h-48" src="${trailer.video}" frameborder="0" allowfullscreen></iframe>
+                    <div class="absolute bottom-0 bg-black bg-opacity-80 w-full text-center p-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                        ${trailer.title}
+                    </div>
+                </div>
+            `).join(''));
+        </script>
+    </main>
+    <footer class="text-center py-4 bg-red-700 mt-6">
+        <button onclick="history.back()" class="px-6 py-2 bg-white text-red-700 font-semibold rounded hover:bg-gray-300 transition">Go Back</button>
+    </footer>
+</body>
+</html>
